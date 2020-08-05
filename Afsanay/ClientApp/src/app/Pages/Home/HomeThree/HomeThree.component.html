@@ -1,6 +1,16 @@
 <embryo-HomePageThreeSlider [isRTL]="embryoService.isDirectionRtl"></embryo-HomePageThreeSlider>
-<embryo-CtaTwo></embryo-CtaTwo>
+<!-- <embryo-CtaTwo></embryo-CtaTwo> -->
 <embryo-CollectionGallery></embryo-CollectionGallery>
+
+<div class="detail-offer section-gap bg-white">
+  <div class="container" *ngIf="productsArray">
+    <embryo-DealOfTheDay [currency]="embryoService?.currency" [singleProduct]="productsArray?.men['2']"></embryo-DealOfTheDay>
+  </div>
+</div>
+
+<div class="quick-shop">
+  <embryo-Sales></embryo-Sales>
+</div>
 
 <div class="section-gap grey-bg">
    <div class="container">
