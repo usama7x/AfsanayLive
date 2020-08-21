@@ -33,8 +33,18 @@ const MENUITEMS = [
     type: 'sub',
     icon: 'shopping_cart',
     children: [
-      {state: 'products', name: 'Products',type : 'link'},
-      {state: 'product-add', name: 'Product Add',type : 'link'}
+      {state: 'products', name: 'Products', type : 'link'},
+      {state: 'product-add', name: 'Product Add', type : 'link'}
+    ]
+  },
+  {
+    state: 'admin-panel',
+    name: 'Categories',
+    type: 'sub',
+    icon: 'category',
+    children: [
+      {state: 'product', name: 'Categories', type : 'link'},
+      {state: 'product-add', name: 'Category Add', type : 'link'}
     ]
   },
   {

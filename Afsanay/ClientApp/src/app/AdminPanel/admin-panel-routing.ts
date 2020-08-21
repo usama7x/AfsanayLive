@@ -3,32 +3,32 @@ import { CommonModule } from '@angular/common';
 import { Routes} from '@angular/router';
 import { MainAdminPanelComponent } from './Main/Main.component';
 
-export const AdminPanelRoutes : Routes = [
+export const AdminPanelRoutes: Routes = [
    {
       path : 'admin-panel',
       redirectTo: 'admin-panel/reports',
       pathMatch: 'full',
-   }, 
+   },
    {
-      path : "admin-panel",
+      path : 'admin-panel',
       component : MainAdminPanelComponent,
-      children: [ 
+      children: [
          {
-            path: 'reports',loadChildren: ()=>
+            path: 'reports', loadChildren: () =>
             import('./Reports/Reports.module').then (m => m.ReportsModule)
          },
          {
-            path: 'invoices',loadChildren: ()=>
+            path: 'invoices', loadChildren: () =>
             import('./Invoices/Invoices.module').then (m => m.InvoicesModule)
          },
          {
-            path: '',loadChildren: ()=>
+            path: '', loadChildren: () =>
             import('./Products/Products.module').then(m => m.ProductsModule)
          },
          {
-            path: 'account',loadChildren: ()=>
+            path: 'account', loadChildren: () =>
             import('./AdminAccount/AdminAccount.module').then (m => m.AdminAccountModule)
          }
       ]
    }
-]
+];
