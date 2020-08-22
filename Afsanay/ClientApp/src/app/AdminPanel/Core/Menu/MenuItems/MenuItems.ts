@@ -38,13 +38,13 @@ const MENUITEMS = [
     ]
   },
   {
-    state: 'admin-panel',
+    state: 'admin-panel/category',
     name: 'Categories',
     type: 'sub',
     icon: 'category',
     children: [
-      {state: 'product', name: 'Categories', type : 'link'},
-      {state: 'product-add', name: 'Category Add', type : 'link'}
+      {state: '', name: 'Categories', type : 'link'},
+      {state: 'add', name: 'Category Add', type : 'link'}
     ]
   },
   {

@@ -10,8 +10,8 @@ export const ProductsRoutes: Routes = [
       pathMatch: 'full'
    },
 	{
-		path      : '',
-		children: [ 
+		path: '',
+		children: [
          {
             path      : 'product-edit',
             component : EditProductComponent

@@ -1,32 +1,31 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
-import { AdminPanelServiceService } from '../../Service/AdminPanelService.service';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort } from "@angular/material/sort";
+import { MatTableDataSource } from "@angular/material/table";
+import { TranslateService } from "@ngx-translate/core";
+import { Router } from "@angular/router";
+import { AdminPanelServiceService } from "../../Service/AdminPanelService.service";
 
 @Component({
-	selector: 'app-products',
-	templateUrl: './Products.component.html',
-	styleUrls: ['./Products.component.scss']
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.css']
 })
+export class CategoriesComponent implements OnInit {
 
-export class ProductsComponent implements OnInit {
-	
-	productsList 		      : any;
-	productsGrid 			   : any;
-	popUpDeleteUserResponse : any;
-	showType	    				: string = 'grid';
-	displayedProductColumns : string [] = ['id', 'image','name','brand','category', 'product_code', 'discount_price', 'price','action' ];
+  productsList: any;
+	productsGrid: any;
+	popUpDeleteUserResponse: any;
+	showType: string = 'grid';
+	displayedProductColumns = ['id', 'image','name','brand','category', 'product_code', 'discount_price', 'price','action' ];
 	@ViewChild(MatPaginator) paginator : MatPaginator;
-	@ViewChild(MatSort) sort           : MatSort;
+  @ViewChild(MatSort) sort: MatSort;
+  
+  constructor(public translate : TranslateService,
+              private router : Router, 
+              private adminPanelService : AdminPanelServiceService) { }
 
-	constructor(public translate : TranslateService,
-				private router : Router, 
-				private adminPanelService : AdminPanelServiceService) { }
-
-	ngOnInit() {
+  ngOnInit() {
 		this.adminPanelService.getProducts().valueChanges().subscribe(res => this.getProductResponse(res));
 	}
 
@@ -90,4 +89,5 @@ export class ProductsComponent implements OnInit {
       	}
       }
    }
+
 }
